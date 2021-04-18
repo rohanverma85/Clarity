@@ -292,6 +292,8 @@ Clarity.prototype.move_player = function () {
     this.player.loc.y += this.player.vel.y;
     
     this.player.vel.x *= .9;
+    this.player.vel.y *= .9;
+    
     
     if (left1.solid || left2.solid || right1.solid || right2.solid) {
 
