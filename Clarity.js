@@ -424,10 +424,10 @@ Clarity.prototype.update_player = function () {
 
     if (this.key.up) {
 
-        if (this.player.can_jump && this.player.vel.y > -this.current_map.vel_limit.y) {
+        if (this.player.vel.y > -this.current_map.vel_limit.y) {
             
             this.player.vel.y -= this.current_map.movement_speed.jump;
-            this.player.can_jump = false;
+            
         }
     }
 
@@ -435,6 +435,12 @@ Clarity.prototype.update_player = function () {
 
         if (this.player.vel.x < this.current_map.vel_limit.x)
             this.player.vel.x += this.current_map.movement_speed.left;
+    }
+    
+    if (this.key.down) {
+
+        if (this.player.vel.y < this.current_map.vel_limit.y)
+            this.player.vel.y += this.current_map.movement_speed.fall;
     }
 
     this.move_player();
