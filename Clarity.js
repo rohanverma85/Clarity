@@ -128,7 +128,7 @@ Clarity.prototype.load_map = function (map) {
     this.current_map = map;
 
     this.current_map.background = map.background || '#333';
-    this.current_map.gravity = map.gravity || {x: 0, y: 0.0};
+    this.current_map.gravity = map.gravity || {x: 0, y: 0.3};
     this.tile_size = map.tile_size || 16;
 
     var _this = this;
