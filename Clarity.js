@@ -41,7 +41,8 @@ var Clarity = function () {
     this.key = {
         left: false,
         right: false,
-        up: false
+        up: false,
+        down: false
     };
 
     this.player = {
@@ -94,6 +95,9 @@ Clarity.prototype.keydown = function (e) {
     case 39:
         _this.key.right = true;
         break;
+    case 40:
+        _this.key.down = true;
+        break;
     }
 };
 
@@ -110,6 +114,9 @@ Clarity.prototype.keyup = function (e) {
         break;
     case 39:
         _this.key.right = false;
+        break;
+    case 40:
+        _this.key.down = false;
         break;
     }
 };
@@ -128,7 +135,7 @@ Clarity.prototype.load_map = function (map) {
     this.current_map = map;
 
     this.current_map.background = map.background || '#333';
-    this.current_map.gravity = map.gravity || {x: 0, y: 0.3};
+    this.current_map.gravity = map.gravity || {x: 0, y: 0};
     this.tile_size = map.tile_size || 16;
 
     var _this = this;
